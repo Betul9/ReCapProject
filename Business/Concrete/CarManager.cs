@@ -59,6 +59,7 @@ namespace Business.Concrete
             return new ErrorResult(Messages.CarDeleted);
         }
 
+        [ValidationAspect(typeof(CarValidator))]
         public IResult Update(Car car)
         {
             _carDal.Update(car);
