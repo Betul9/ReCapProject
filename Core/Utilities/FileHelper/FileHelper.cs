@@ -74,7 +74,7 @@ namespace Core.Utilities.FileHelper
             System.IO.FileInfo fileInfo = new System.IO.FileInfo(file.FileName);
             var fileExtension = fileInfo.Extension;
 
-            string path = Environment.CurrentDirectory + @"\Images";
+            string path = Environment.CurrentDirectory + @"\wwwroot\Images";
             string destPath = Guid.NewGuid().ToString() + fileExtension;
 
             var result = $@"{path}\{destPath}"; 

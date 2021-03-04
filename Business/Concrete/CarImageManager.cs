@@ -96,7 +96,7 @@ namespace Business.Concrete
         {
             try
             {
-                string path = @"\Images\default.jpg";
+                string path = @"\wwwroot\Images\default.jpg";
                 var result = _carImageDal.GetAll(p => p.CarId == carId).Any();
 
                 if (!result)
