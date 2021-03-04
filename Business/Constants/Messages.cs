@@ -31,5 +31,6 @@ namespace Business.Constants
         internal static string CarImageAdded = "Araba Fotoğrafı Eklendi";
         internal static string ImageCouldNotBeAdded = "Araba Fotoğrafı Eklenemedi";
         internal static string AuthorizationDenied = "Yetkiniz Yok";
+        internal static string carUpdated;
     }
 }
