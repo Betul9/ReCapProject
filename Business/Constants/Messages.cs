@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Runtime.Serialization;
 using System.Text;
 
 namespace Business.Constants
@@ -29,5 +30,6 @@ namespace Business.Constants
         public static string RentalCouldNotFound = "Rental Bulunamadı";
         internal static string CarImageAdded = "Araba Fotoğrafı Eklendi";
         internal static string ImageCouldNotBeAdded = "Araba Fotoğrafı Eklenemedi";
+        internal static string AuthorizationDenied = "Yetkiniz Yok";
     }
 }

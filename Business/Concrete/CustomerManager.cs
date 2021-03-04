@@ -40,7 +40,7 @@ namespace Business.Concrete
 
         public IDataResult<Customer> GetById(int customerId)
         {
-            return new SuccessDataResult<Customer>(_customerDal.GetById(p=>p.CustomerId == customerId));
+            return new SuccessDataResult<Customer>(_customerDal.Get(p=>p.CustomerId == customerId));
         }
 
         [ValidationAspect(typeof(CustomerValidator))]

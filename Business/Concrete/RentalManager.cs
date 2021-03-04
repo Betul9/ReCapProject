@@ -35,7 +35,7 @@ namespace Business.Concrete
 
         public IResult Delete(Rental rental)
         {
-            var rentalToDelete = _rentalDal.GetById(p => p.RentalId == rental.RentalId);
+            var rentalToDelete = _rentalDal.Get(p => p.RentalId == rental.RentalId);
 
             if (rentalToDelete != null)
             {
@@ -54,7 +54,7 @@ namespace Business.Concrete
 
         public IDataResult<Rental> GetById(int rentalId)
         {
-            return new SuccessDataResult<Rental>(_rentalDal.GetById(p=>p.RentalId == rentalId));
+            return new SuccessDataResult<Rental>(_rentalDal.Get(p=>p.RentalId == rentalId));
         }
 
         [ValidationAspect(typeof(RentalValidator))]

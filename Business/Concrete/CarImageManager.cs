@@ -61,7 +61,7 @@ namespace Business.Concrete
         [ValidationAspect(typeof(CarImageValidator))]
         public IResult Update(IFormFile file, CarImage carImage)
         {
-            var oldPath = _carImageDal.GetById(p => p.ImageId == carImage.ImageId).ImagePath;
+            var oldPath = _carImageDal.Get(p => p.ImageId == carImage.ImageId).ImagePath;
 
             carImage.ImagePath = FileHelper.Update(oldPath, file);
             carImage.Date = DateTime.Now;
@@ -75,9 +75,9 @@ namespace Business.Concrete
             return new SuccessDataResult<List<CarImage>>(_carImageDal.GetAll());
         }
 
-        public IDataResult<CarImage> GetById(int carImageId)
+        public IDataResult<CarImage> GetById(int imageId)
         {
-            return new SuccessDataResult<CarImage>(_carImageDal.GetById(p=>p.ImageId == carImageId));
+            return new SuccessDataResult<CarImage>(_carImageDal.Get(p=>p.ImageId == imageId));
         }
 
         public IDataResult<List<CarImage>> GetByCarId(int carId)
