@@ -8,6 +8,7 @@ using Core.Utilities.FileHelper;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
+using Entities.DTOs;
 using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
@@ -93,7 +94,7 @@ namespace Business.Concrete
                 return new ErrorDataResult<List<CarImage>>();
             }
 
-            return new SuccessDataResult<List<CarImage>>(CheckIfCarImageNull(carId).Data);
+            return new SuccessDataResult<List<CarImage>>(_carImageDal.GetAll(p => p.CarId == carId));
         }
 
         private IDataResult<List<CarImage>> CheckIfCarImageNull(int carId)

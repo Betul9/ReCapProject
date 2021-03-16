@@ -28,9 +28,9 @@ namespace Business.Constants
         public static string UserUpdated = "Kullanıcı Bilgisi Güncellendi";
         public static string RentalNotAvailable = "Rental Mevcut Değil";
         public static string RentalCouldNotFound = "Rental Bulunamadı";
-        internal static string CarImageAdded = "Araba Fotoğrafı Eklendi";
-        internal static string ImageCouldNotBeAdded = "Araba Fotoğrafı Eklenemedi";
-        internal static string AuthorizationDenied = "Yetkiniz Yok";
-        internal static string carUpdated;
+        public static string CarImageAdded = "Araba Fotoğrafı Eklendi";
+        public static string ImageCouldNotBeAdded = "Araba Fotoğrafı Eklenemedi";
+        public static string AuthorizationDenied = "Yetkiniz Yok";
+        public static string carUpdated = "Araba Güncellendi";
     }
 }

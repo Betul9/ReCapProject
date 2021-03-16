@@ -23,9 +23,9 @@ namespace Core.Utilities.FileHelper
                         file.CopyTo(stream);
                 }
 
-                File.Move(sourcePath, destPath);
+                File.Move(sourcePath, destPath.newPath);
                 Console.WriteLine("File added");
-                return destPath;
+                return destPath.pathShort;
             }
 
             catch(Exception exception)
@@ -42,7 +42,7 @@ namespace Core.Utilities.FileHelper
             {
                 if (sourcePath.Length > 0)
                 {
-                    using (var stream = new FileStream(destPath, FileMode.Create))
+                    using (var stream = new FileStream(destPath.newPath, FileMode.Create))
                         file.CopyTo(stream);
                 }
                 File.Delete(sourcePath);
@@ -53,7 +53,7 @@ namespace Core.Utilities.FileHelper
                 return exception.Message;
             }
 
-            return destPath;
+            return destPath.pathShort;
         }
 
         public static IResult Delete(string path)
@@ -69,16 +69,15 @@ namespace Core.Utilities.FileHelper
             return new SuccessResult();
         }
 
-        private static string NewPath(IFormFile file)
+        private static (string newPath, string pathShort) NewPath(IFormFile file)
         {
             System.IO.FileInfo fileInfo = new System.IO.FileInfo(file.FileName);
             var fileExtension = fileInfo.Extension;
 
-            string path = Environment.CurrentDirectory + @"\wwwroot\Images";
-            string destPath = Guid.NewGuid().ToString() + fileExtension;
+            string uniqueName = Guid.NewGuid().ToString() + fileExtension;
+            string path = $@"{Environment.CurrentDirectory + @"\wwwroot\Images"}\{uniqueName}";
 
-            var result = $@"{path}\{destPath}"; 
-            return result;
+            return (path, $"\\Images\\{uniqueName}");
         }
     }
 }

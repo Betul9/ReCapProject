@@ -70,12 +70,17 @@ namespace DataAccess.Concrete.InMemory
             carToUpdate.ModelYear = car.ModelYear;
         }
 
-        public List<CarDetailDto> GetCarDetails()
+        public List<CarDetailDto> GetCarDetails(Expression<Func<Car, bool>> filter = null)
         {
             throw new NotImplementedException();
         }
 
-        public Car GetById(Expression<Func<Car, bool>> filter)
+        public List<CarDetailDto> GetCarImagesByCarId(Expression<Func<Car, bool>> filter = null)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<CarDetailDto> GetCarImagesByCarId(int carId)
         {
             throw new NotImplementedException();
         }

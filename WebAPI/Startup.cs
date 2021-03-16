@@ -39,6 +39,8 @@ namespace WebAPI
         {
             services.AddControllers();
 
+            services.AddCors();
+
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
 
@@ -71,7 +73,11 @@ namespace WebAPI
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseCors(builder=>builder.WithOrigins("https://localhost:44304").AllowAnyHeader().AllowAnyOrigin());
+
             app.UseHttpsRedirection();
+
+            app.UseStaticFiles();
 
             app.UseRouting();
 
