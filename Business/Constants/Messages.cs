@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Entities.Concrete;
+using System;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 using System.Text;
@@ -32,5 +33,15 @@ namespace Business.Constants
         public static string ImageCouldNotBeAdded = "Araba Fotoğrafı Eklenemedi";
         public static string AuthorizationDenied = "Yetkiniz Yok";
         public static string carUpdated = "Araba Güncellendi";
+        public static string DefaultCarImageCannotBeAdded="Default Resim Eklenemedi";
+        internal static string CarRentDateSet;
+        internal static string CarRentDateCouldNotSet;
+        internal static string RentalAvailable;
+        internal static string CarRentable;
+        internal static string CardAdded;
+        internal static string CardDeleted;
+        internal static string CardUpdated;
+        internal static string CardDoesNotExist;
+        internal static string CardExists;
     }
 }
