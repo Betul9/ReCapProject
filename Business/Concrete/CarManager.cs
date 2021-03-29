@@ -61,7 +61,7 @@ namespace Business.Concrete
             return new SuccessDataResult<List<CarDetailDto>>(_carDal.GetCarDetails(p => p.ColorId == colorId));
         }
 
-        //[SecuredOperation("car.add,admin")]
+        [SecuredOperation("car.add,admin")]
         [ValidationAspect(typeof(CarValidator))]
         [CacheRemoveAspect("ICarService.Get")]
         public IResult Add(Car car)
@@ -91,5 +91,12 @@ namespace Business.Concrete
             _carDal.Add(car);
             return new SuccessResult(Messages.carUpdated);
         }
+
+        public int GetCarMinFindeksScore(int carId)
+        {
+            var result = _carDal.Get(p => p.CarId == carId).FindeksScore;
+            return result;
+        }
+
     }
 }

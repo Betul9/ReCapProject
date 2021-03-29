@@ -22,5 +22,7 @@ namespace Business.Abstract
         IResult Delete(Car car);
 
         IResult TransactionalOperation(Car car);
+
+        int GetCarMinFindeksScore(int carId);
     }
 }

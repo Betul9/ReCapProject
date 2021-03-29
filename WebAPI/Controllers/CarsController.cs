@@ -110,5 +110,15 @@ namespace WebAPI.Controllers
                 return Ok(result);
             return BadRequest(result);
         }
+
+        [HttpGet("getfindeksscore")]
+        public IActionResult CheckCarFindeksScore(int carId)
+        {
+            var result = _carService.GetCarMinFindeksScore(carId);
+            if (result != null)
+                return Ok(result);
+            return BadRequest(result);
+        }
+
     }
 }

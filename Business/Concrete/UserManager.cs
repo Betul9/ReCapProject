@@ -37,7 +37,7 @@ namespace Business.Concrete
 
         public IDataResult<User> GetByMail(string email)
         {
-            return new SuccessDataResult<User>(_userDal.GetAll(p => p.Email == email).FirstOrDefault());
+            return new SuccessDataResult<User>(_userDal.Get(p => p.Email == email));
         }
 
         public IResult Delete(User user)
@@ -63,5 +63,6 @@ namespace Business.Concrete
         {
             return new SuccessDataResult<List<User>>(_userDal.GetAll());
         }
+
     }
 }

@@ -39,9 +39,9 @@ namespace WebAPI.Controllers
         }
 
         [HttpGet("getcustomerdetails")]
-        public IActionResult GetCustomerDetails()
+        public IActionResult GetCustomerDetails(int customerId)
         {
-            var result = _customerService.GetCustomerDetails();
+            var result = _customerService.GetCustomerDetails(customerId);
             if (result.Success)
                 return Ok(result);
             return BadRequest(result);
@@ -73,5 +73,15 @@ namespace WebAPI.Controllers
                 return Ok(result);
             return BadRequest(result);
         }
+
+       [HttpGet("getfindeksscore")]
+       public IActionResult GetCustomerFindeksScore(int customerId)
+        {
+            var result = _customerService.GetCustomerFindeksScore(customerId);
+            if (result != null)
+                return Ok(result);
+            return BadRequest(result);
+        }
+
     }
 }

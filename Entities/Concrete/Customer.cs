@@ -8,6 +8,8 @@ namespace Entities.Concrete
     public class Customer : IEntity
     {
         public int CustomerId { get; set; }
+        public int? CardNumber { get; set; }
         public string CompanyName { get; set; }
+        public int FindeksScore { get; set; }
     }
 }

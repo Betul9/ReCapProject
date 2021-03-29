@@ -18,3 +18,4 @@ namespace Business.Abstract
         IDataResult<User> GetByMail(string email);
     }
 }
+

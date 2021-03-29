@@ -49,9 +49,9 @@ namespace Business.Concrete
         }
 
         [CacheAspect]
-        public IDataResult<List<CustomerDetailDto>> GetCustomerDetails()
+        public IDataResult<List<CustomerDetailDto>> GetCustomerDetails(int customerId)
         {
-            return new SuccessDataResult<List<CustomerDetailDto>>(_customerDal.GetCustomerDetails());
+            return new SuccessDataResult<List<CustomerDetailDto>>(_customerDal.GetCustomerDetails(p=>p.CustomerId==customerId));
         }
 
         [ValidationAspect(typeof(CustomerValidator))]
@@ -61,5 +61,12 @@ namespace Business.Concrete
             _customerDal.Update(customer);
             return new SuccessResult(Messages.CustomerUpdated);
         }
+
+        public int GetCustomerFindeksScore(int customerId)
+        {
+            var result = _customerDal.Get(p => p.CustomerId == customerId).FindeksScore;
+            return result;
+        }
+
     }
 }

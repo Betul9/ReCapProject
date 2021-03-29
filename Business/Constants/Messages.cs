@@ -34,14 +34,15 @@ namespace Business.Constants
         public static string AuthorizationDenied = "Yetkiniz Yok";
         public static string carUpdated = "Araba Güncellendi";
         public static string DefaultCarImageCannotBeAdded="Default Resim Eklenemedi";
-        internal static string CarRentDateSet;
-        internal static string CarRentDateCouldNotSet;
-        internal static string RentalAvailable;
-        internal static string CarRentable;
-        internal static string CardAdded;
-        internal static string CardDeleted;
-        internal static string CardUpdated;
-        internal static string CardDoesNotExist;
-        internal static string CardExists;
+        public static string CarRentDateSet;
+        public static string CarRentDateCouldNotSet;
+        public static string RentalAvailable;
+        public static string CarRentable;
+        public static string CardAdded;
+        public static string CardDeleted;
+        public static string CardUpdated;
+        public static string CardDoesNotExist;
+        public static string CardExists;
+        public static string CustomerCardUpdated;
     }
 }
